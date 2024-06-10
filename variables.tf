@@ -1,6 +1,6 @@
 variable "region" {
   type    = string
-  default = "us-west-2"
+  default = "eu-west-1"
 }
 
 variable "cidr_block_all_traffic" {
@@ -76,8 +76,7 @@ variable "allowed_ip_address" {
 
 variable "ami_ubuntu" {
   type = string
-  #default = "ami-0c1c30571d2dae5c9" #eu-west-1
-  default = "ami-0cf2b4e024cdb6960" #us-west-2
+  default = "ami-0c1c30571d2dae5c9" #eu-west-1
 }
 
 variable "wazuh_instance_type" {
