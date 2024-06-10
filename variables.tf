@@ -71,7 +71,7 @@ variable "zero_port" {
 variable "allowed_ip_address" {
   description = "Allowed IP address for SSH access"
   type        = string
-  default     = "92.178.16.16/32" # All traffic by default
+  default     = "0.0.0.0/0" # All traffic by default. Review it at terraform.tfvars
 }
 
 variable "ami_ubuntu" {

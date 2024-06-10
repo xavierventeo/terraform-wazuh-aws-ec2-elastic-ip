@@ -11,7 +11,7 @@ resource "aws_security_group" "siem_sg" {
     from_port   = var.ssh_port
     to_port     = var.ssh_port
     protocol    = var.tcp_protocol
-    cidr_blocks = ["0.0.0.0/0"] # Cambiado a un rango de IPs diferente
+    cidr_blocks = [var.cidr_block_all_traffic] # Cambiado a un rango de IPs diferente
   }
 
   ingress {
@@ -31,8 +31,8 @@ resource "aws_security_group" "siem_sg" {
   egress {
     from_port   = 0
     to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
+    protocol    = var.all_protocols
+    cidr_blocks = [var.cidr_block_all_traffic]
   }
 }
 
