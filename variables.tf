@@ -75,7 +75,7 @@ variable "allowed_ip_address" {
 }
 
 variable "ami_ubuntu" {
-  type = string
+  type    = string
   default = "ami-0c1c30571d2dae5c9" #eu-west-1
 }
 

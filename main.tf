@@ -11,7 +11,7 @@ resource "aws_security_group" "siem_sg" {
     from_port   = var.ssh_port
     to_port     = var.ssh_port
     protocol    = var.tcp_protocol
-    cidr_blocks = [var.cidr_block_all_traffic] # Cambiado a un rango de IPs diferente
+    cidr_blocks = [var.allowed_ip_address] # Cambiado a un rango de IPs diferente
   }
 
   ingress {
@@ -26,6 +26,20 @@ resource "aws_security_group" "siem_sg" {
     to_port     = var.https_port
     protocol    = var.tcp_protocol
     cidr_blocks = [var.allowed_ip_address] # Cambiado a un rango de IPs diferente
+  }
+
+  ingress {
+    from_port   = var.syslog_port # To be able to get logs from Wazuh agents
+    to_port     = var.syslog_port
+    protocol    = var.tcp_protocol
+    cidr_blocks = [var.cidr_block_all_traffic]
+  }
+
+  ingress {
+    from_port   = var.syslog_alternative_port # To be able to get logs from Wazuh agents
+    to_port     = var.syslog_alternative_port
+    protocol    = var.tcp_protocol
+    cidr_blocks = [var.cidr_block_all_traffic]
   }
 
   egress {
