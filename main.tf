@@ -54,7 +54,7 @@ resource "aws_instance" "wazuh_instance" {
   ami                    = var.ami_ubuntu
   instance_type          = var.wazuh_instance_type
   vpc_security_group_ids = [aws_security_group.siem_sg.id]
-  #key_name        = var.ssh_key_name
+  key_name               = var.ssh_key_name
   tags = {
     Name = "Wazuh Instance"
   }
