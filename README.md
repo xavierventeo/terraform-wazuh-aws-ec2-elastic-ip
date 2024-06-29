@@ -23,13 +23,13 @@ Repository of a basic network to be analyzed by the SIEM:
 1. Clone this repository to your local machine:
 
 ```bash
-git clone git@github.com:xavierventeo/cybersecurity-lab.git
+git clone git@github.com:xavierventeo/terraform-wazuh-aws-ec2-elastic-ip.git
 ```
 
 2. Navigate to the repository directory:
 
 ```bash
-cd cybersecurity-lab
+cd terraform-wazuh-aws-ec2-elastic-ip
 ```
 
 3. Initialize Terraform:
