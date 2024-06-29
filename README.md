@@ -40,6 +40,8 @@ terraform init
 
 4. Configure terraform variables with your own values
 
+    Pay attention to configure **allowed_ip_address** variable in order to allow external access to your own IP
+   
 ```bash
 cp terraform.tfvars.example terraform.tfvars
 vi terraform.tfvars
